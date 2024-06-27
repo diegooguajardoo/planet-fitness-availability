@@ -3,10 +3,13 @@ import json
 from datetime import datetime
 import csv
 import os
+import time
 
 key = os.environ["PLANET_KEY"]
 
+
 def get_data():
+    '''Get the current crowd level of the gym.'''
     url = "https://v2.twinoaksadvantage.com/tosdapi/api/MemberInformation/GetCrowdLevel?clubId=3164"
     headers = {
         "Host": "v2.twinoaksadvantage.com",
@@ -32,10 +35,14 @@ def get_data():
 
 
 def main():
+    '''Write the data to a csv file.'''
     data = get_data()
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open('planet-fitness.csv', mode='a') as file:
         writer = csv.writer(file)
         writer.writerow([date, data])
 
-main()
+
+while True:
+    time.sleep(1800)
+    main()
