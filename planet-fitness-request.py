@@ -6,6 +6,7 @@ import os
 import time
 
 key = os.environ["PLANET_KEY"]
+print(key)
 
 
 def get_data():
