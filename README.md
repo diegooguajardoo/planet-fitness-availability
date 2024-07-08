@@ -35,5 +35,8 @@ The script will continuously fetch data and append it to the `planet-fitness.csv
 ## Stopping the Script
 To stop the script, use the keyboard shortcut `Ctrl + C` in the terminal.
 
+
+## Example Output
+![Example result analysis](image.png)
 ## Note
 This script is intended for educational purposes and should be used responsibly. Ensure you have permission to fetch data from the target URL and comply with any applicable terms of service.
